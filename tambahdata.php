@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Tambah Data Mahasiswa</h2>
-    <form action="mahasiswa.php" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <table cellpadding="5px">
             <tr>
                 <td><label for="nama">Nama</label></td>
@@ -15,24 +15,29 @@
                 <td><input type="text" id="nama" name="name"/></td>
             </tr>
             <tr>
-                <td><label for="foto">Foto</label></td>
+                <td><label for="nim">NIM</label></td>
                 <td>:</td>
-                <td><input type="file" id="" name="foto"/></td>
+                <td><input type="NUMBER" id="" name="NIM"/></td>
             </tr>
             <tr>
-                <td><label for="uts">UTS</label></td>
+                <td><label for="jurusan">Jurusan</label></td>
                 <td>:</td>
-                <td><input type="number" id="uts" name="uts"/></td>
+                <td><input type="number" id="jurusan" name="jurusan"/></td>
             </tr>
             <tr>
-                <td><label for="uas">UAS</label></td>
+                <td><label for="email">Email</label></td>
                 <td>:</td>
-                <td><input type="number" id="uas" name="uas"/></td>
+                <td><input type="emial" id="email" name="email"/></td>
             </tr>
              <tr>
-                <td><label for="tugas">TUGAS</label></td>
+                <td><label for="nohp">No. Hp</label></td>
                 <td>:</td>
-                <td><input type="number" id="tugas" name="tugas"/></td>
+                <td><input type="number" id="nohp" name="no_hp"/></td>
+            </tr>
+              <tr>
+                <td><label for="foto">Foto</label></td>
+                <td>:</td>
+                <td><input type="text" id="foto" name=foto"/></td>
             </tr>
             <tr>
                 <td colspan="3">

@@ -1,3 +1,18 @@
+    
+
+<?php
+    require "fungsi.php";
+    //(echo"") untuk ngeprint
+    //($nama) $untuk tipe data dan nama variabel nya 
+    //(foreach) untuk perulangan 
+    //($nama []) untuk array
+    //function
+    
+    
+    
+    $qmahasiswa = "SELECT * FROM mahasiswa";
+    $mahasiswas = tampildata($qmahasiswa); //array isi data mahasiswa
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,43 +38,36 @@
     </a>
     <table border="1" cellpadding="10px">
         <tr>
-            <th rowspan="2">No</th>
-            <th rowspan="2">Nama</th>
-            <th rowspan="2">Foto</th>
-            <th colspan="3">Nilai</th>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Jurusan</th>
+            <th>Email</th>
+            <th>No. HP</th>
+            <th>Foto</th>
+            <th>Aksi</th>
         </tr>
+        <?php
+            $i = 1;
+           foreach($mahasiswas as $mhs)
+            {
+        ?>
         <tr>
-            <th>UTS</th>
-            <th>UAS</th>
-            <th>TUGAS</th>
+            <td align="center"><?= $i ?></td>
+            <td><?php echo $mhs ["nama"] ?></td>
+            <td><?php echo $mhs ["nim"] ?></td>
+            <td><?= $mhs ["jurusan"] ?></td>
+            <td><?= $mhs ["email"]?></td>
+            <td><?= $mhs ["no_hp"]?></td>
+            <td><img src="asset/images/<?= $mhs["foto"] ?>" alt="foto" width="60px"></td>
+            <td>
+                <a href="editdata.php"><button>Edit</button></a> | <a href="deletedata.php"><button>Hapus</button></a>
+            </td>
         </tr>
-        
-        <tr>
-            <td>1</td>
-            <td>Muhaliman Subidyo</td>
-            <td><img src="asset/images/muhaliman.jpg" alt="foto" width="60px"></td>
-            <td align="center">90</td>
-            <td align="center">85</td>
-            <td align="center">40</td>
-        </tr>
-
-        <tr>
-            <td>2</td>
-            <td>Anis Muharam</td>
-            <td><img src="asset/images/anis.jpg" alt="foto" width="60px"></td>
-            <td align="center">91</td>
-            <td align="center">80</td>
-            <td align="center">45</td>
-        </tr>
-
-        <tr>
-            <td>2</td>
-            <td>Mawar Bosok</td>
-            <td><img src="asset/images/mawar.jpg" alt="foto" width="60px"></td>
-            <td align="center">91</td>
-            <td align="center">80</td>
-            <td align="center">45</td>
-        </tr>
+        <?php
+            $i++;
+            }
+        ?>
     </table>
     <br>
     <hr/>
