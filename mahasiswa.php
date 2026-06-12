@@ -61,14 +61,15 @@
             <td><?= $mhs ["no_hp"]?></td>
             <td><img src="asset/images/<?= $mhs["foto"] ?>" alt="foto" width="60px"></td>
             <td>
-                <a href="editdata.php"><button>Edit</button></a> | <a href="deletedata.php"><button>Hapus</button></a>
+                <a href="editdata.php"><button>Edit</button></a> | 
+                <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus?')";><button>Hapus</button></a>
             </td>
         </tr>
         <?php
             $i++;
             }
         ?>
-    </table>
+    <!-- </table>
     <br>
     <hr/>
     <table border="1"cellspacing="0" callpadding="10">
@@ -93,6 +94,6 @@
             <td>4,3</td>
             <td>4,4</td>
         </tr>
-    </table>
+    </table> -->
 </body>
 </html>

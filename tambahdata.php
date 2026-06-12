@@ -1,3 +1,32 @@
+<?php 
+
+    require "fungsi.php";
+
+    if(isset($_POST["submit"]))
+    {
+        
+        if(tambahdata($_POST) > 0)
+        {
+            echo "<script>
+                  alert('Data Berhasil Ditambahkan!');
+                  window.location.href='mahasiswa.php';  
+            </script>
+            ";
+        }
+        else
+        {
+            echo "<script>
+            alert('Data Gagal Ditambahkan!');
+            window.location.href='mahasiswa.php';
+            </script> 
+            ";
+        }
+    }
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +46,12 @@
             <tr>
                 <td><label for="nim">NIM</label></td>
                 <td>:</td>
-                <td><input type="NUMBER" id="" name="NIM"/></td>
+                <td><input type="number" id="nim" name="nim"/></td>
             </tr>
             <tr>
                 <td><label for="jurusan">Jurusan</label></td>
                 <td>:</td>
-                <td><input type="number" id="jurusan" name="jurusan"/></td>
+                <td><input type="text" id="jurusan" name="jurusan"/></td>
             </tr>
             <tr>
                 <td><label for="email">Email</label></td>
@@ -37,7 +66,7 @@
               <tr>
                 <td><label for="foto">Foto</label></td>
                 <td>:</td>
-                <td><input type="text" id="foto" name=foto"/></td>
+                <td><input type="text" id="foto" name="foto"/></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -49,7 +78,7 @@
     <br>
     <hr>
 
-    <form action="">
+    <!-- <form action="">
         <table cellpadding="5px">
             <tr>
                 <td><label for="nama">Nama</label></td>
@@ -131,6 +160,6 @@
                 </td>
             </tr>
         </table>
-    </form>
+    </form> -->
 </body>
 </html>
